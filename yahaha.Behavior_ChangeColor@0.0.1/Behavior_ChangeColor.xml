@@ -1,0 +1,10 @@
+<Module template="Behavior_ChangeColor" type="LuaModule">
+    <Name>ChangeColor</Name>
+    <Label key="Behavior_ChangeColor.title">ChangeColor</Label>
+    <Children>
+    </Children>
+     <Component>
+        <Required>YahahaMiddleLayerLib.Physics.Hybrid.YaPhysicsMsg</Required>
+        <Conflicted>YahahaMiddleLayerLib.Physics.Hybrid.YaPhysicsMsg</Conflicted>
+    </Component>
+</Module>

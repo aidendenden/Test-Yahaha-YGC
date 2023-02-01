@@ -1,0 +1,14 @@
+<Module template="Behavior_LockedDoor" type="LuaModule">
+    <Name>LockedDoor</Name>
+    <Label key="Behavior_LockedDoor.title">LockedDoor</Label>
+    <Children>
+    <Field active="True" type="Float3Field">
+            <Name>MovingPosition</Name>
+            <Label key="Behavior_LockedDoor.MovingPosition">Moving Position</Label>
+            <Value default="0,0,0">0,0,0</Value>
+         </Field>
+    </Children>
+    <Component>
+        <Required>YahahaMiddleLayer.Gear.Hybrid.YaMoverComponent</Required>
+    </Component>
+</Module>

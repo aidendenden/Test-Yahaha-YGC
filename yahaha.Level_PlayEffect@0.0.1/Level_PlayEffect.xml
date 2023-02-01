@@ -1,0 +1,44 @@
+<Module template="Level_PlayEffect" type="LuaModule">
+    <Name>PlayEffect</Name>
+    <Label key="Level_PlayEffect.title">Level_PlayEffect</Label>
+    <Children>
+        <Field active="True" type="ButtonField">
+            <Label key="Level_PlayerManager.btn">Add vfx Item</Label>
+            <Value  refId="1" after="False" dataSource="" />
+            <Options>
+                <Node id = "1" active="True" type="LuaNode">
+                    <Name>Effect</Name>
+                    <Label key="Level_PlayerManager.effect">Effect</Label>
+                    <Modifier id="1" repeatable="True" deletable="True" min="0" max="999" />
+                    <Children>
+                        <Field active="True" type="TextField">
+                            <Name>vfxName</Name>
+                            <Label key="Level_PlayerManager.btn2.vfxName">vfxName</Label>
+                            <Value default="False" maxLength="60">vfxName</Value>
+                        </Field>
+                        <Field active="True" type="DropdownField">
+                            <Name>needDestroyType</Name>
+                            <Label key="Level_PlayerManager.btn2.needDestroyType">needDestroy</Label>
+                            <Value default="1">1</Value>
+                            <Options>
+                                <Option value="1">
+                                    <Label key="Level_PlayerManager.needDestroyType.1">True</Label>
+                                    <Action type="show" refId="21"/>
+                                </Option>
+                                <Option value="2">
+                                    <Label key="Level_PlayerManager.needDestroyTupe.2">False</Label>
+                                    <Action type="hide" refId="21"/>
+                                </Option>
+                            </Options>
+                        </Field>
+                        <Field id = "21" active="True" type="TimeField">
+                            <Name>playTime</Name>
+                            <Label key="Level_PlayerManager.btn2.playTime">playTime</Label>
+                            <Value default="1" min="1" max="120" suffix="s">1</Value>
+                        </Field>
+                    </Children>
+                </Node>
+            </Options>
+        </Field>
+    </Children>
+</Module>

@@ -1,0 +1,46 @@
+<Module template="Level_ColorWarGameManager" type="LuaModule">
+    <Name>ColorWarGameManager</Name>
+    <Label key="ColorWarGameManager.title">ColorWarGameManager</Label>
+    <Children>
+            <Field active="True" type="EntityField">
+                <Name>Champion</Name>
+                <Label key="Level_ColorWarGameManager.Champion.modelId">Champion</Label>
+                <Value default="0">0</Value>
+            </Field>
+             <Field active="True" type="EntityField">
+                <Name>SmokeEffect</Name>
+                <Label key="Level_ColorWarGameManager.SmokeEffect">Smoke Effect</Label>
+                <Value default="0">0</Value>
+            </Field>
+            <Field active="True" type="EntityField">
+                <Name>PushEffect</Name>
+                <Label key="Level_ColorWarGameManager.PushEffect">Push Effect</Label>
+                <Value default="0">0</Value>
+            </Field>
+             <Field active="True" type="EntityField">
+                <Name>ShieldEffect</Name>
+                <Label key="Level_ColorWarGameManager.ShieldEffect">Shield Effect</Label>
+                <Value default="0">0</Value>
+            </Field>
+            <Field active="True" type="Float3Field">
+                <Name>Crownlocation</Name>
+                <Label key="Level_ColorWarGameManager.Crownlocation">Crown location</Label>
+                <Value default="0,0,0">0,0,0</Value>
+            </Field>
+            <Field active="True" type="FloatField">
+                <Name>ExplosionForce</Name>
+                <Label key="Level_ColorWarGameManager.ExplosionForce">Explosion Force</Label>
+                <Value default="100" min="1" max="10000">100</Value>
+            </Field>
+            <Field active="True" type="FloatField">
+                <Name>ExplosionRadius</Name>
+                <Label key="Level_ColorWarGameManager.ExplosionRadius">Explosion Radius</Label>
+                <Value default="10" min="1" max="500">10</Value>
+            </Field>
+            <Field active="True" type="FloatField">
+                <Name>ExplosionUpwardsModifier</Name>
+                <Label key="Level_ColorWarGameManager.ExplosionUpwardsModifier">Explosion Upwards Modifier</Label>
+            <Value default="1" min="0" max="50">1</Value>
+            </Field>
+    </Children>
+</Module>

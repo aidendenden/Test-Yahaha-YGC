@@ -1,0 +1,8 @@
+{
+    "name": "Behavior_ChangeColor",
+    "publisher": "yahaha",
+    "description": "Behavior_ChangeColor",
+    "version": "0.0.1",
+    "xml": "Behavior_ChangeColor.xml",
+    "tpl": "Behavior_ChangeColor.tpl"
+}

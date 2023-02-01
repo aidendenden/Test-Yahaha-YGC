@@ -1,0 +1,8 @@
+{
+    "name": "Behavior_LockedDoor",
+    "publisher": "yahaha",
+    "description": "Behavior_LockedDoor",
+    "version": "0.0.1",
+    "xml": "Behavior_LockedDoor.xml",
+    "tpl": "Behavior_LockedDoor.tpl"
+}

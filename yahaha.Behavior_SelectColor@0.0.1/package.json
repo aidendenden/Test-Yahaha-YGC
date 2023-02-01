@@ -1,0 +1,8 @@
+{
+    "name": "Behavior_SelectColor",
+    "publisher": "yahaha",
+    "description": "Behavior_SelectColor",
+    "version": "0.0.1",
+    "xml": "Behavior_SelectColor.xml",
+    "tpl": "Behavior_SelectColor.tpl"
+}

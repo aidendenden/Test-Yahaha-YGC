@@ -1,0 +1,48 @@
+<Module template="Behavior_ColorWarPropFunction" type="LuaModule">
+    <Name>ColorWarPropFunction</Name>
+    <Label key="Behavior_ColorWarPropFunction.title">ColorWarPropFunction</Label>
+    <Children>
+           <Field active="True" type="Float3Field">
+            <Name>Proplocation</Name>
+            <Label key="Behavior_ColorWarPropFunction.Proplocation">Prop location</Label>
+            <Value default="0,0,0">0,0,0</Value>
+          </Field>
+          <Field active="True" type="DropdownField">
+                    <Name>SkillsType</Name>
+                    <Label key="Behavior_ColorWarPropFunction.SkillsType">Skills Mode</Label>
+                    <Value default="SelfSpeedUp">SelfSpeedUp</Value>
+                    <Options>
+                        <Option value="Key">
+                            <Label key="Behavior_ColorWarPropFunction.SkillsType.Key">Key</Label>
+                        </Option>
+                        <Option value="SelfSpeedUp">
+                            <Label key="Behavior_ColorWarPropFunction.SkillsType.SelfSpeedUp">SelfSpeedUp</Label>
+                        </Option>
+                         <Option value="OtherPlayersSpeedSlowly">
+                            <Label key="Behavior_ColorWarPropFunction.SkillsType.OtherPlayersSpeedSlowly">OtherPlayersSpeedSlowly</Label>
+                        </Option>
+                        <Option value="Stealth">
+                            <Label key="Behavior_ColorWarPropFunction.SkillsType.Stealth">Stealth</Label>
+                        </Option>
+                        <Option value="JumpHigh">
+                            <Label key="Behavior_ColorWarPropFunction.SkillsType.JumpHigh">JumpHigh</Label>
+                        </Option>
+                        <Option value="Shield">
+                            <Label key="Behavior_ColorWarPropFunction.SkillsType.Shield">Shield</Label>
+                        </Option>
+                        <Option value="PushAway">
+                            <Label key="Behavior_ColorWarPropFunction.SkillsType.PushAway">PushAway</Label>
+                        </Option>
+                        <Option value="TrapBomb">
+                            <Label key="Behavior_ColorWarPropFunction.SkillsType.Bomb">TrapBomb</Label>
+                        </Option>
+                          <Option value="Smoke">
+                            <Label key="Behavior_ColorWarPropFunction.SkillsType.Smoke">Smoke</Label>
+                        </Option>
+                          <Option value="King">
+                            <Label key="Behavior_ColorWarPropFunction.SkillsType.King">King</Label>
+                        </Option>
+                    </Options>
+            </Field>
+    </Children>
+</Module>

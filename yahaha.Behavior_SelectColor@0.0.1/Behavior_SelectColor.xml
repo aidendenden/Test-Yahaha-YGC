@@ -1,0 +1,11 @@
+<Module template="Behavior_SelectColor" type="LuaModule">
+    <Name>SelectColor</Name>
+    <Label key="Behavior_SelectColor.title">SelectColor</Label>
+    <Children>
+       <Field active="True" type="Float3Field">
+            <Name>TargetColor</Name>
+            <Label key="Behavior_SelectColor.Color">Target Color</Label>
+            <Value default="0,0,0">0,0,0</Value>
+         </Field>
+    </Children>
+</Module>

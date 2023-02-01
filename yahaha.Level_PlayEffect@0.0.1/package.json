@@ -1,0 +1,8 @@
+{
+    "name": "Level_PlayEffect",
+    "publisher": "yahaha",
+    "description": "Level_PlayEffect",
+    "version": "0.0.1",
+    "xml": "Level_PlayEffect.xml",
+    "tpl": "Level_PlayEffect.tpl"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Level_ColorWarGameManager",
+    "publisher": "yahaha",
+    "description": "Level_ColorWarGameManager",
+    "version": "0.0.1",
+    "xml": "Level_ColorWarGameManager.xml",
+    "tpl": "Level_ColorWarGameManager.tpl"
+}
