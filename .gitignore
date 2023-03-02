@@ -1,0 +1,4 @@
+*.meta
+.vs/**
+.DS_Store
+.idea/**
