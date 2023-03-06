@@ -1,0 +1,6 @@
+<Module template="Behavior_GameOfLife" type="LuaModule" scope="server">
+    <Name>Behavior_GameOfLife</Name>
+    <Label key="Behavior_GameOfLife.title">Behavior_GameOfLife</Label>
+    <Children>
+    </Children>
+</Module>

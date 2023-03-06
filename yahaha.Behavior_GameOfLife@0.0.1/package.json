@@ -1,0 +1,11 @@
+{
+    "name": "Behavior_GameOfLife",
+    "publisher": "yahaha",
+    "description": "Behavior_GameOfLife",
+    "version": "0.0.1",
+    "xml": "Behavior_GameOfLife.xml",
+    "tpl": "Behavior_GameOfLife.tpl",
+    "references":
+    [
+    ]
+}
