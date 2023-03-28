@@ -1,0 +1,11 @@
+<Module template="Level_ChessControl" type="LuaModule" scope="server">
+    <Name>Level_ChessControl</Name>
+    <Label key="Level_ChessControl.title">Level_ChessControl</Label>
+    <Children>
+        <Field active="True" type="EntityField">
+            <Name>StartPoint</Name>
+            <Label key="Level_ChessControl.StartPoint">StartPoint</Label>
+            <Value default="0">0</Value>
+        </Field>
+    </Children>
+</Module>

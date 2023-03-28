@@ -1,0 +1,6 @@
+<Module template="Level_MazeManager" type="LuaModule" scope="server">
+    <Name>Level_MazeManager</Name>
+    <Label key="Level_MazeManager.title">Level_MazeManager</Label>
+    <Children>
+    </Children>
+</Module>

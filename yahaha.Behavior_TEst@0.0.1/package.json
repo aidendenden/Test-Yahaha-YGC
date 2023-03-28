@@ -1,0 +1,11 @@
+{
+    "name": "Behavior_TEst",
+    "publisher": "yahaha",
+    "description": "Behavior_TEst",
+    "version": "0.0.1",
+    "xml": "Behavior_TEst.xml",
+    "tpl": "Behavior_TEst.tpl",
+    "references":
+    [
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "name": "Level_MazeManager",
+    "publisher": "yahaha",
+    "description": "Level_MazeManager",
+    "version": "0.0.1",
+    "xml": "Level_MazeManager.xml",
+    "tpl": "Level_MazeManager.tpl",
+    "references":
+    [
+    ]
+}

@@ -1,0 +1,6 @@
+<Module template="UI_ChessManage" type="LuaModule" scope="client">
+    <Name>UI_ChessManage</Name>
+    <Label key="UI_ChessManage.title">UI_ChessManage</Label>
+    <Children>
+    </Children>
+</Module>

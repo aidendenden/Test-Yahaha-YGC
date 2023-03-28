@@ -1,0 +1,11 @@
+{
+    "name": "Level_ChessControl",
+    "publisher": "yahaha",
+    "description": "Level_ChessControl",
+    "version": "0.0.1",
+    "xml": "Level_ChessControl.xml",
+    "tpl": "Level_ChessControl.tpl",
+    "references":
+    [
+    ]
+}

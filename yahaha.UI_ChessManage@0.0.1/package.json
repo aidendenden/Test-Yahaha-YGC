@@ -1,0 +1,11 @@
+{
+    "name": "UI_ChessManage",
+    "publisher": "yahaha",
+    "description": "UI_ChessManage",
+    "version": "0.0.1",
+    "xml": "UI_ChessManage.xml",
+    "tpl": "UI_ChessManage.tpl",
+    "references":
+    [
+    ]
+}

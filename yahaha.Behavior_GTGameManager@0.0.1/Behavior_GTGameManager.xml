@@ -1,0 +1,6 @@
+<Module template="Behavior_GTGameManager" type="LuaModule" scope="server">
+    <Name>Behavior_GTGameManager</Name>
+    <Label key="Behavior_GTGameManager.title">Behavior_GTGameManager</Label>
+    <Children>
+    </Children>
+</Module>

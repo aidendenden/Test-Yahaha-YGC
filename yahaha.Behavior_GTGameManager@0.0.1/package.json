@@ -1,0 +1,11 @@
+{
+    "name": "Behavior_GTGameManager",
+    "publisher": "yahaha",
+    "description": "Behavior_GTGameManager",
+    "version": "0.0.1",
+    "xml": "Behavior_GTGameManager.xml",
+    "tpl": "Behavior_GTGameManager.tpl",
+    "references":
+    [
+    ]
+}

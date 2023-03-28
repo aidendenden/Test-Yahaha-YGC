@@ -1,0 +1,6 @@
+<Module template="Behavior_TEst" type="LuaModule" scope="server">
+    <Name>Behavior_TEst</Name>
+    <Label key="Behavior_TEst.title">Behavior_TEst</Label>
+    <Children>
+    </Children>
+</Module>
