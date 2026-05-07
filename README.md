@@ -1,2 +1,0 @@
-# TestYGC
-YGC by Test
