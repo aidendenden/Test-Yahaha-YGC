@@ -1,0 +1,304 @@
+.dashboard-layout {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0f0f23 100%);
+}
+
+.dashboard-sider {
+  background: rgba(10, 10, 15, 0.95) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  position: fixed !important;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.dashboard-sider .ant-layout-sider-children {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-container {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo-container .logo-icon {
+  font-size: 32px;
+}
+
+.logo-container .logo-text {
+  font-size: 20px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dashboard-menu {
+  background: transparent !important;
+  border: none;
+  flex: 1;
+}
+
+.dashboard-menu .ant-menu-item {
+  margin: 8px 12px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.dashboard-menu .ant-menu-item:hover {
+  background: rgba(102, 126, 234, 0.1) !important;
+}
+
+.dashboard-menu .ant-menu-item-selected {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.user-info {
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.user-info .user-name {
+  color: #fff;
+  font-size: 14px;
+}
+
+.user-info .user-balance {
+  color: #667eea;
+  font-size: 12px;
+}
+
+.dashboard-header {
+  background: rgba(10, 10, 15, 0.8) !important;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0 32px !important;
+  position: fixed;
+  top: 0;
+  left: 240px;
+  right: 0;
+  z-index: 99;
+  height: 64px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.dashboard-main-content {
+  margin-left: 240px;
+  margin-top: 64px;
+  padding: 32px;
+  min-height: calc(100vh - 64px);
+}
+
+.dashboard-content {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-title {
+  color: #fff !important;
+  margin-bottom: 24px !important;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-title::before {
+  content: '';
+  width: 4px;
+  height: 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 20px !important;
+  backdrop-filter: blur(20px);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.stat-card .ant-card-body {
+  padding: 24px;
+}
+
+.stat-card-primary {
+  border-left: 4px solid #667eea;
+}
+
+.stat-card-success {
+  border-left: 4px solid #52c41a;
+}
+
+.stat-card-info {
+  border-left: 4px solid #1890ff;
+}
+
+.stat-card-warning {
+  border-left: 4px solid #faad14;
+}
+
+.stat-title {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-size: 14px;
+}
+
+.stat-card .ant-statistic-content-value {
+  font-size: 32px !important;
+  font-weight: 700;
+}
+
+.usage-card {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 20px;
+  height: 200px;
+}
+
+.usage-stat {
+  margin-bottom: 24px;
+}
+
+.usage-label {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+
+.usage-value {
+  color: #fff !important;
+  font-size: 28px !important;
+  margin: 8px 0 0 0 !important;
+}
+
+.usage-chart-placeholder {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  height: 60px;
+  padding: 0 20px;
+}
+
+.chart-bar {
+  width: 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 6px 6px 0 0;
+  transition: all 0.3s ease;
+}
+
+.chart-bar:hover {
+  opacity: 0.8;
+  transform: scaleY(1.05);
+  transform-origin: bottom;
+}
+
+.provider-card {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 20px;
+}
+
+.provider-card .ant-card-body {
+  padding: 20px;
+}
+
+.provider-stats {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.create-key-form {
+  margin-bottom: 24px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.api-keys-table {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.api-keys-table .ant-table {
+  background: transparent !important;
+}
+
+.api-keys-table .ant-table-thead > tr > th {
+  background: rgba(102, 126, 234, 0.1) !important;
+  color: #fff !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.api-keys-table .ant-table-tbody > tr > td {
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.api-keys-table .ant-table-tbody > tr:hover > td {
+  background: rgba(102, 126, 234, 0.05) !important;
+}
+
+.usage-detail-card,
+.balance-card,
+.balance-management-card {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 20px;
+}
+
+.balance-management-card {
+  padding: 32px;
+}
+
+.balance-management-card .ant-descriptions-item-label {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.balance-management-card .ant-descriptions-item-content {
+  color: #fff !important;
+}
