@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Token Gateway - 设计预览</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0f0f23 100%);
+            min-height: 100vh;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .background-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.3;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .shape-1 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            top: -100px;
+            left: -100px;
+        }
+
+        .shape-2 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            top: 50%;
+            right: -50px;
+            animation-delay: -5s;
+        }
+
+        .shape-3 {
+            width: 350px;
+            height: 350px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            bottom: -100px;
+            left: 30%;
+            animation-delay: -10s;
+        }
+
+        .shape-4 {
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            top: 20%;
+            left: 60%;
+            animation-delay: -15s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(50px, 50px) rotate(90deg); }
+            50% { transform: translate(0, 100px) rotate(180deg); }
+            75% { transform: translate(-50px, 50px) rotate(270deg); }
+        }
+
+        .preview-container {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .screenshot-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 24px;
+            backdrop-filter: blur(20px);
+            transition: all 0.3s ease;
+        }
+
+        .screenshot-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .screenshot-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .screenshot-desc {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .demo-card {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-radius: 16px;
+            padding: 16px;
+            margin-top: 16px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px -10px rgba(102, 126, 234, 0.5);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px -10px rgba(102, 126, 234, 0.6);
+        }
+
+        .demo-preview {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 16px;
+            border: 1px dashed rgba(102, 126, 234, 0.3);
+        }
+
+        .stat-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 12px 0;
+        }
+
+        .stat-card {
+            background: rgba(102, 126, 234, 0.1);
+            border-left: 3px solid #667eea;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 4px;
+        }
+
+        .api-key-example {
+            font-family: 'Courier New', monospace;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 8px 12px;
+            border-radius: 6px;
+            color: #667eea;
+            margin-top: 12px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="background-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+        
+        <div class="preview-container">
+            <h1>🚀 AI Token Gateway - 界面设计预览</h1>
+            
+            <div class="screenshots">
+                <div class="screenshot-card">
+                    <div class="screenshot-title">🔐 登录/注册页面</div>
+                    <div class="screenshot-desc">
+                        带有动态光晕背景和毛玻璃效果的登录界面，支持邮箱和密码输入，渐变按钮。
+                    </div>
+                    <div class="demo-preview">
+                        <div class="stat-row">
+                            <div class="stat-card">
+                                <div class="stat-value">⚡</div>
+                                <div class="stat-label">动态背景</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">🌫️</div>
+                                <div class="stat-label">毛玻璃</div>
+                            </div>
+                        </div>
+                        <div class="api-key-example">sk-aitoken-xxxxxxxxx</div>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <div class="screenshot-title">📊 Dashboard 主页</div>
+                    <div class="screenshot-desc">
+                        深色主题的管理后台，展示余额、Key 数量、请求数、总费用等统计。
+                    </div>
+                    <div class="demo-preview">
+                        <div class="stat-row">
+                            <div class="stat-card">
+                                <div class="stat-value">¥100.00</div>
+                                <div class="stat-label">余额</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">5</div>
+                                <div class="stat-label">API Keys</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">1,234</div>
+                                <div class="stat-label">请求数</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">¥8.50</div>
+                                <div class="stat-label">总费用</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <div class="screenshot-title">🔑 API Keys 管理</div>
+                    <div class="screenshot-desc">
+                        创建、管理你的 API Key，支持启用禁用，安全提示。
+                    </div>
+                    <div class="demo-preview">
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                            <span style="background: rgba(82, 196, 26, 0.2); color: #52c41a; padding: 4px 12px; border-radius: 9999px; font-size: 12px;">启用</span>
+                            <span style="background: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.7); padding: 4px 12px; border-radius: 9999px; font-size: 12px;">禁用</span>
+                        </div>
+                        <div class="api-key-example" style="margin-top: 12px;">
+                            sk-ait****x9y2
+                        </div>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <div class="screenshot-title">💎 支持的模型</div>
+                    <div class="screenshot-desc">
+                        OpenAI、Claude、Gemini 多提供商支持，统一调用格式。
+                    </div>
+                    <div class="demo-preview">
+                        <div class="stat-row">
+                            <div class="stat-card" style="border-left-color: #52c41a;">
+                                <div class="stat-value">GPT-4o</div>
+                                <div class="stat-label">OpenAI</div>
+                            </div>
+                            <div class="stat-card" style="border-left-color: #1890ff;">
+                                <div class="stat-value">Claude</div>
+                                <div class="stat-label">Anthropic</div>
+                            </div>
+                            <div class="stat-card" style="border-left-color: #faad14;">
+                                <div class="stat-value">Gemini</div>
+                                <div class="stat-label">Google</div>
+                            </div>
+                            <div class="stat-card" style="border-left-color: #667eea;">
+                                <div class="stat-value">更多</div>
+                                <div class="stat-label">即将支持</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="http://localhost:5173" class="btn" target="_blank">
+                    🖥️ 电脑上打开真实体验 →
+                </a>
+                <div style="color: rgba(255,255,255,0.5); font-size: 12px; margin-top: 12px;">
+                    （点击按钮仅在本地开发服务开启时可用）
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
